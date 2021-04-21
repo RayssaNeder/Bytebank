@@ -30,4 +30,4 @@ EXPOSE 80
 
 
 #docker build -t angular-nginx .
-#docker run -d -p 808:80 angular-nginx
+#docker run -d -p 8084:80 angular-nginx
