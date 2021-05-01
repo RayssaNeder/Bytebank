@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bytebank';
+  transferencia: any;
+
+
+
+  transferir($event: { valorrr: number | undefined; destinoooo: number | undefined; }) {
+    console.log($event)
+    this.transferencia = $event
+  }
 }
+
+

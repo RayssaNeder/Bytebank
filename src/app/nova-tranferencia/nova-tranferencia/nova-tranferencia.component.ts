@@ -10,7 +10,7 @@ export class NovaTranferenciaComponent implements OnInit {
   @Output() aoTransferir = new EventEmitter<any>();
 
   valor: number | undefined;
-  destino!: number;
+  destino: number | undefined;
 
   constructor() { }
 
@@ -19,9 +19,16 @@ export class NovaTranferenciaComponent implements OnInit {
 
   transferir(){
     console.log('Solicitada nova transferência');
-    const valorEmitir = {valor: this.valor, destino: this.destino};
+    const valorEmitir = {valorrr: this.valor, destinoooo: this.destino};
     this.aoTransferir.emit(valorEmitir);
 
+    this.limparCampos();
+
+  }
+
+  limparCampos(){
+    this.valor = 0;
+    this.destino = 0;
   }
 
 }
