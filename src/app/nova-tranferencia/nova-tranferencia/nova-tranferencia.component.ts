@@ -2,6 +2,7 @@ import { Transferencia } from './../../models/transferencia.model';
 import { TransferenciaService } from './../../services/transferencia.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nova-tranferencia',
@@ -15,7 +16,7 @@ export class NovaTranferenciaComponent implements OnInit {
   valor: number | undefined;
   destino: number | undefined;
 
-  constructor(private service: TransferenciaService) { }
+  constructor(private service: TransferenciaService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -26,6 +27,7 @@ export class NovaTranferenciaComponent implements OnInit {
     this.service.adicionar(valorEmitir).subscribe(resultado => {
       console.log(resultado);
       this.limparCampos();
+      this.router.navigateByUrl('extrato');
     },
       error => console.error(error));
 
