@@ -8,8 +8,8 @@
   <tbody *ngIf="transferencias.length > 0; else listaVazia">
     <tr class="tebla__linha" *ngFor="let tranferencia of transferencias">
       <td class="tabela__conteudo">{{ tranferencia?.data | date: "short" }}</td>
-      <td class="tabela__conteudo">{{ tranferencia?.valorrr | currency }}</td>
-      <td class="tabela__conteudo">{{ tranferencia?.destinoooo }}</td>
+      <td class="tabela__conteudo">{{ tranferencia?.valor | currency }}</td>
+      <td class="tabela__conteudo">{{ tranferencia?.destino }}</td>
     </tr>
   </tbody>
 </table>
